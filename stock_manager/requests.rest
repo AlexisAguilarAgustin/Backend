@@ -1,0 +1,84 @@
+###
+GET http://localhost:3000/users
+
+###
+GET http://localhost:3000/users/1
+
+###
+# Crear un nuevo usuario
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "username": "pepe el perro",
+  "password": "holadonjose",
+  "email": "pepepepe@gamil.com"
+}
+
+###
+# Editar un usuario existente
+PUT http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+  "name": "Alexis Vega"
+}
+
+###
+# Eliminar un usuario
+DELETE http://localhost:3000/users/2
+
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "username": "Alexis",
+  "password": "abc123"
+}
+
+
+//parte de staff
+
+###
+GET http://localhost:3000/staff
+
+###
+GET http://localhost:3000/staff/1
+
+###
+# Crear un nuevo staff
+POST http://localhost:3000/staff
+Content-Type: application/json
+
+{
+  "first_name": "itzamar",
+  "last_name": "crespo",
+  "birt_date": "2002-07-09",
+  "gender": "F",
+  "phone_number": "2871014725",
+  "email": "closing@gamil.com",
+  "address": "",
+  "user_id": "1"
+}
+
+###
+# Editar un staff existente
+PUT http://localhost:3000/staff/1
+Content-Type: application/json
+
+{
+  "first_name": "itzamar",
+  "last_name": "crespo",
+  "birt_date": "2002-07-09",
+  "gender": "F",
+  "phone_number": "2871014725",
+  "email": "closing@gamil.com",
+  "address": "",
+  "user_id": "1"
+}
+
+###
+# Eliminar un staff
+DELETE http://localhost:3000/staff/2
