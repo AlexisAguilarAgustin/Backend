@@ -1,0 +1,33 @@
+###
+GET http://localhost:3000/products
+
+###
+GET http://localhost:3000/products/1
+
+###
+# Crear un nuevo producto
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "Bicicleta",
+    "description": "Bicicleta de montaña",
+    "price": 1000,
+    "stock": 5
+}    
+
+###
+# Editar un producto existente
+PUT http://localhost:3000/products/1
+Content-Type: application/json
+
+{
+    "name": "Bicicleta",
+    "description": "Bicicleta de montaña",
+    "price": 1000,
+    "stock": 5
+}
+
+###
+# Eliminar un producto
+DELETE http://localhost:3000/products/2
