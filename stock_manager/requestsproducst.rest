@@ -13,6 +13,7 @@ Content-Type: application/json
     "product": "Bicicleta",
     "description": "Bicicleta de montaña",
     "stock": 5,
+    "measurement_unit": "piece",
     "price": 1000,
     "disount": 10.00
 

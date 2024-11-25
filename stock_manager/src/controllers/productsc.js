@@ -41,16 +41,19 @@ const getProductsById = async (req = request, res = response) => {
     }
 };
 
+// crear producto
 const createProduct = async (req = request, res = response) => {
     const {product,  
         description,
         stock,
+        measurement_unit,
         price,
         discount} = req.body;
 
     if (!product, 
         !description,
         !stock,
+        !measurement_unit,
         !price,
         !discount) {
 
@@ -79,6 +82,7 @@ const createProduct = async (req = request, res = response) => {
     }
 };
 
+// actualizar producto
 const updateProduct = async (req = request, res = response) => {
     const {id} = req.params;
     const {product,  
@@ -114,6 +118,7 @@ const updateProduct = async (req = request, res = response) => {
     }
 };
 
+//eliminar producto
 const deleteProduct = async (req = request, res = response) => {
     const {id} = req.params;
 
