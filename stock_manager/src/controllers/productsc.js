@@ -42,7 +42,21 @@ const getProductById = async (req = request, res = response) => {
 };
 
 const createProduct = async (req = request, res = response) => {
-    const {name, price, description} = req.body;
+    const {product,  
+        description,
+        stock,
+        price,
+        discount} = req.body;
+
+    if (!product, 
+        !description,
+        !stock,
+        !price,
+        !discount) {
+
+        res.status(400).send('Missing required fields');
+        return;
+    }
 
     let conn;
     try {

@@ -10,10 +10,12 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name": "Bicicleta",
+    "product": "Bicicleta",
     "description": "Bicicleta de montaña",
+    "stock": 5,
     "price": 1000,
-    "stock": 5
+    "disount": 10.00
+
 }    
 
 ###
@@ -22,10 +24,11 @@ PUT http://localhost:3000/products/1
 Content-Type: application/json
 
 {
-    "name": "Bicicleta",
+    "product": "Bicicleta",
     "description": "Bicicleta de montaña",
+    "stock": 5,
     "price": 1000,
-    "stock": 5
+    "disount": 13.00
 }
 
 ###
