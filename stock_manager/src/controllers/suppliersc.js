@@ -16,18 +16,18 @@ const getAllsuppliers = async (req = request, res = response) => {
     }
 };
 
-const getSuppliersById = async (req = request, res = response) => {
+const getSuppliersByid = async (req = request, res = response) => {
     const {id} = req.params;
 
     if (isNaN(id)) {
-        res.status(400).send('Invalid ID');
+        res.status(400).send('Invalid RFC');
         return;
     }
 
     let conn;
     try {
         conn = await pool.getConnection();    
-        const supplier = await conn.query(suppliersQueries.getById, [id]);
+        const supplier = await conn.query(suppliersQueries.getByrfc, [id]);
         if (!supplier) {
             res.status(404).send('Supplier not found');
             return;
@@ -135,4 +135,4 @@ const deleteSupplier = async (req = request, res = response) => {
     }
 };
 
-module.exports = {getAllsuppliers, getSuppliersById, createSupplier, updateSupplier, deleteSupplier};
+module.exports = {getAllsuppliers, getSuppliersByid, createSupplier, updateSupplier, deleteSupplier};
