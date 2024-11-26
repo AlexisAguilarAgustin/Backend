@@ -6,10 +6,10 @@ const getAllProducts_suppliers = async (req = request, res = response) => {
     let conn;
     try {
         conn = await pool.getConnection();
-        const products = await conn.query(productsQueries.getAll);
+        const products = await conn.query(products_suppliersQueries.getAll);
         res.send(products);
     } catch (error) {
-        res.status(500).send(error);  
+        res.status(500).send(error);    
         return;
     } finally {
         if (conn) conn.end();  
@@ -20,19 +20,19 @@ const getProducts_suppliersById = async (req = request, res = response) => {
     const {id} = req.params;
 
     if (isNaN(id)) {
-        res.status(400).send('Invalid ID');
+        res.status(400).send('Invalid id');
         return;
     }
 
     let conn;
     try {
-        conn = await pool.getConnection();    
-        const product = await conn.query(productsQueries.getById, [id]);
-        if (!product) {
+        conn = await pool.getConnection();
+        const products = await conn.query(products_suppliersQueries.getById, [id]);
+        if (!products) {
             res.status(404).send('Product not found');
             return;
         }
-        res.send(product);
+        res.send(products);
     } catch (error) {
         res.status(500).send(error);    
         return;
@@ -43,19 +43,13 @@ const getProducts_suppliersById = async (req = request, res = response) => {
 
 // crear products_suppliers
 const createProducts_suppliers = async (req = request, res = response) => {
-    const {product,  
-        description,
-        stock,
-        measurement_unit,
-        price,
-        discount} = req.body;
+    const {product_id,  
+        suppliers_rfc,
+        notes} = req.body;
 
-    if (!product, 
-        !description,
-        !stock,
-        !measurement_unit,
-        !price,
-        !discount) {
+    if (!product_id,  
+        !suppliers_rfc,
+        !notes) {
 
         res.status(400).send('Missing required fields');
         return;
@@ -85,11 +79,9 @@ const createProducts_suppliers = async (req = request, res = response) => {
 // actualizar products_suppliers
 const updateProducts_suppliers = async (req = request, res = response) => {
     const {id} = req.params;
-    const {product,  
-        description,
-        stock,
-        price,
-        discount} = req.body;
+    const {product_id,  
+        suppliers_rfc,
+        notes} = req.body;
 
     if (isNaN(id)) {
         res.status(400).send('Invalid ID');
@@ -99,11 +91,10 @@ const updateProducts_suppliers = async (req = request, res = response) => {
     let conn;
     try {
         conn = await pool.getConnection();
-        const products = await conn.query(productsQueries.update, [product,  
-            description,
-            stock,
-            price,
-            discount, 
+        const products = await conn.query(products_suppliersQueries.update, 
+            [product_id,  
+        suppliers_rfc,
+        notes, 
             id]);
         if (product.affectedrows === 0) {
             res.status(500).send('Product could not be updated');
@@ -130,7 +121,7 @@ const deleteProducts_suppliers = async (req = request, res = response) => {
     let conn;
     try {
         conn = await pool.getConnection();
-        const products = await conn.query(productsQueries.delete, [id]);
+        const products = await conn.query(products_suppliersQueries.delete, [id]);
         if (products.affectedrows === 0) {
             res.status(500).send('Product could not be deleted');
             return;

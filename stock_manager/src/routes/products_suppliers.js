@@ -1,10 +1,5 @@
 const {Router} = require ('express')
-const {getAllProducts_suppliers, 
-    getProducts_suppliersById, 
-    createProducts_suppliers,
-     updateProducts_suppliers, 
-     deleteProducts_suppliers} 
-     = require('../controllers/productsc');
+const {getAllProducts_suppliers, getProducts_suppliersById, createProducts_suppliers, updateProducts_suppliers, deleteProducts_suppliers} = require('../controllers/products_suppliersc');
 
 const router = Router();
 
