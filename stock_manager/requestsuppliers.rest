@@ -1,0 +1,33 @@
+### Mostrar todos los miembros de supplier
+GET http://localhost:3000/suppliers
+### Mostrar un miembro específico de supplier por rfc
+GET http://localhost:3000/suppliers/rfc/13567890
+### Agregar un nuevo miembro a supplier
+POST http://localhost:3000/suppliers
+Content-Type: application/json
+
+{
+  "rfc": "123456",
+  "name": "Ana",
+  "description": "Chica con lentes",
+  "phone_number": "0123456789",
+  "email": "ana123@gamil.com",
+  "address": "1111",
+  "is_active": true
+}
+
+
+### Actualizar un miembro específico de supplier
+PUT http://localhost:3000/suppliers/rfc/123456
+Content-Type: application/json
+
+{
+  "name": "Alexis",
+  "description": "Delgado",
+  "phone_number": "1234544451",
+  "email": "alexis.15@gamil.com",
+  "address": "casa verde",
+  "is_active": true
+}
+### Eliminar un miembro específico de supplier por rfc
+DELETE http://localhost:3000/suppliers/rfc/123456

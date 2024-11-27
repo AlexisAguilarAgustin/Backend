@@ -1,0 +1,39 @@
+### Obtener todos los registros
+GET http://localhost:3000/products_suppliers
+
+
+###
+
+### Obtener un registro por ID
+GET http://localhost:3000/products_suppliers/1
+Content-Type: application/json
+
+###
+
+### Crear un nuevo registro
+POST http://localhost:3000/products_suppliers
+Content-Type: application/json
+
+{
+    "product_id": 5,
+    "supplier_rfc": "55555555",
+    "notes": "prueba2"
+}
+
+###
+
+### Actualizar un registro por ID
+PUT http://localhost:3000/products_suppliers/1
+Content-Type: application/json
+
+{
+    "product_id": 6,
+    "supplier_rfc": "13567890",
+    "notes": "Updated product-supplier association"
+}
+
+###
+
+### Eliminar un registro por ID
+DELETE http://localhost:3000/products_suppliers/1
+Content-Type: application/json

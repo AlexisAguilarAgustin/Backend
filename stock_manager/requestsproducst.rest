@@ -1,37 +1,38 @@
-###
+#requestsproducst.rest
+### 
 GET http://localhost:3000/products
 
-###
+### 
 GET http://localhost:3000/products/1
 
-###
-# Crear un nuevo producto
+### 
+# Crear un nuevo producto 
 POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "product": "Bicicleta",
-    "description": "Bicicleta de montaña",
-    "stock": 5,
+    "product": "Moto",
+    "description": "Todo Terreno",
+    "stock": 3,
     "measurement_unit": "piece",
-    "price": 1000,
-    "disount": 10.00
+    "price": 100,
+    "discount": 10
+}
 
-}    
-
-###
+###  
 # Editar un producto existente
-PUT http://localhost:3000/products/1
+PUT http://localhost:3000/products/6
 Content-Type: application/json
 
 {
-    "product": "Bicicleta",
-    "description": "Bicicleta de montaña",
-    "stock": 5,
-    "price": 1000,
-    "disount": 13.00
+    "product": "Motocicleta",
+    "description": "Todo Terreno",
+    "stock": 50,
+    "measurement_unit": "piece",
+    "price": 100,
+    "discount": 10
 }
 
-###
-# Eliminar un producto
-DELETE http://localhost:3000/products/2
+### 
+# Eliminar un producto 
+DELETE http://localhost:3000/products/3
