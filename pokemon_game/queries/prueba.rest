@@ -1,1 +1,25 @@
-GET http://localhost:3000
+###
+GET http://localhost:3000/users
+
+###
+GET http://localhost:3000/users/1
+
+###
+POSt http://localhost:3000/users
+{
+    "first_name": "Alexis",
+    "last_name": "Aguilar",
+    "email": "alex-agui01@outlook.com",
+    "password": "Itzakawai:3"
+}
+
+###
+PUT http://localhost:3000/users/1
+{
+    "first_name": "Alexis",
+    "last_name": "Aguilar",
+    "email": "alex-agui01@outlook.com"
+}
+
+###
+DELETE http://localhost:3000/users/1
