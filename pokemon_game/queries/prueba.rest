@@ -1,25 +1,33 @@
 ###
 GET http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzMzOTQwNTMwLCJleHAiOjE3MzM5NDA4MzB9.j1utbGzFXAnmYeJLAboL7C3FSFRxhzcLoSnZ_JG1YXw
 
 ###
 GET http://localhost:3000/users/1
 
 ###
-POSt http://localhost:3000/users
+POST http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzMzOTQwNTMwLCJleHAiOjE3MzM5NDA4MzB9.j1utbGzFXAnmYeJLAboL7C3FSFRxhzcLoSnZ_JG1YXw
+
+
 {
-    "first_name": "Alexis",
-    "last_name": "Aguilar",
-    "email": "alex-agui01@outlook.com",
-    "password": "Itzakawai:3"
+    "first_name": "jean",
+    "last_name": "aguilar",
+    "email": "unrank@gmail.com",
+    "password": "elchico"
 }
 
 ###
 PUT http://localhost:3000/users/1
+Content-Type: application/json
+
 {
-    "first_name": "Alexis",
-    "last_name": "Aguilar",
-    "email": "alex-agui01@outlook.com"
+    "first_name": "Juan",
+    "last_name": "Doe",
+    "email": "johndoe@gmail.com"
 }
 
 ###
-DELETE http://localhost:3000/users/1
+DELETE  http://localhost:3000/users/1

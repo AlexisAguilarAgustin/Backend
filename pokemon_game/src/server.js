@@ -1,12 +1,13 @@
 const express = require('express');
 const usersRoutes = require('./routes/users');
 const pokemonsRoutes = require('./routes/pokemons');
+const authRoutes = require('./routes/auth');
 const pokemonSeeder = require('./seeders/pokemon');
 
 class Server {
     constructor() {
         this.app = express();
-        this.port = 3000;
+        this.port = 3000
 
         this.middleware();
         this.routes();
@@ -19,15 +20,16 @@ class Server {
     routes(){
         this.app.use('/users', usersRoutes);
         this.app.use('/pokemons', pokemonsRoutes);
+        this.app.use('/auth', authRoutes);
     }
 
-    seeder () {
-    pokemonSeeder();
+    seeder(){
+        pokemonSeeder();
     }
 
     start(){
         this.app.listen(this.port, () =>{
-            console.log(`Server running on port ${this.port}`);
+            console.log(`Server is running on Port ${this.port}`);
         })
     }
 }
