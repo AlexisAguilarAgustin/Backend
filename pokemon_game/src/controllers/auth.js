@@ -13,7 +13,8 @@ const login = async (req = request, res = response) => {
     if(!email || !password) {
         res.status(400).send({
             message: "Some fields are missing"
-        })
+        });
+        return;
     }
 
     let conn;
@@ -24,8 +25,9 @@ const login = async (req = request, res = response) => {
         if(!user){
             res.status(404).send({
                 message: "User not found"
-            })
+            });
             return;
+           
         }
 
         const valid = await bcrypt.compare(password, user.password);
@@ -33,7 +35,7 @@ const login = async (req = request, res = response) => {
         if(!valid) {
             res.status(401).send({
                 message: "Invalid credentials"
-            })
+            });
             return;
         }
 
@@ -53,7 +55,7 @@ const login = async (req = request, res = response) => {
             message: "Successfully logged in",
             user, 
             token
-        })
+        });
 
     }catch (error) {
         res.status(500).send(error);
@@ -61,9 +63,9 @@ const login = async (req = request, res = response) => {
         if (conn) conn.end();
     }
 
-}
+};
 
 
 module.exports = {
     login
-}
+};

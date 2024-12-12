@@ -11,7 +11,7 @@ const SALT_ROUNDS = 10;
 
 const userProtected = async (req = request, res = response) =>{
     res.send({message: "You have access!!"});
-}
+};
 
 const getAllUsers = async (req = request, res = response) =>{
     let conn;
@@ -29,7 +29,7 @@ const getAllUsers = async (req = request, res = response) =>{
     }finally{
         if (conn) conn.end();
     }
-}
+};
 
 const createUser = async (req = request, res = response) =>{
     const {
@@ -80,7 +80,7 @@ const createUser = async (req = request, res = response) =>{
     }finally{
         if (conn) conn.end();
     }
-}
+};
 
 
 const getUser = async (req = request, res = response) =>{
@@ -108,7 +108,7 @@ const getUser = async (req = request, res = response) =>{
     }finally{
         if (conn) conn.end();
     }
-}
+};
 
 const updateUser = async (req = request, res = response) => {
     const {id} = req.params;
@@ -154,7 +154,7 @@ const updateUser = async (req = request, res = response) => {
     }finally{
         if (conn) conn.end();
     }
-}
+};
 
 
 
@@ -191,7 +191,7 @@ const destroyUser = async (req = request, res = response) =>{
     }finally{
         if (conn) conn.end();
     }
-}
+};
 
 
 module.exports = {
