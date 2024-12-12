@@ -28,7 +28,7 @@ const login = async (req = request, res = response) => {
             return;
         }
 
-        const valid = await bcrypt.compare(password, user.password)
+        const valid = await bcrypt.compare(password, user.password);
 
         if(!valid) {
             res.status(401).send({
@@ -42,7 +42,7 @@ const login = async (req = request, res = response) => {
 
         const token = jwt.sign({
         id: user.id,
-        is_Adnmin: user.is_Admin
+        is_admin: user.is_admin
         }, secret, {
             expiresIn: "5m"
         });
