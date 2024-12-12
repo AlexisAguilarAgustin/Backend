@@ -11,8 +11,8 @@ POST http://localhost:3000/pokemons
 Content-Type: application/json
 
 {
-    "name": "pppppp",
-    "image": "agfhkfjgfh"
+    "name": "charmander",
+    "image": "charmander.png"
     
 }
 
@@ -21,8 +21,8 @@ PUT http://localhost:3000/pokemons/153
 Content-Type: application/json
 
 {
-    "name": "papapapa",
-    "image": "afggjn"
+    "name": "mewtwo",
+    "image": "mewtwo.png"
 }
 
 ###
